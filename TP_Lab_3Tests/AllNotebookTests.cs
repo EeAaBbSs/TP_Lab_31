@@ -24,6 +24,7 @@ namespace TP_Lab_3.Tests
             string expected = "Type of cover: Hard\nNumber of pages 5\nText of the first page.\nText of the second page.\nText of the third page.\nText of the fourth page.\nText of the fifth page.\n";
             string actual = notebook.Info();
             Assert.AreEqual(expected, actual);
+            //Проверка коммита на гитхаб
         }
     }
 }
