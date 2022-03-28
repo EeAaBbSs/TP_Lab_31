@@ -4,12 +4,12 @@ using System.Text;
 
 namespace TP_Lab_3
 {
-    class Archon : Demon
+    public class Archon : Demon
     {
-        private bool highIntelligence = true;
-        public void IsSmart()
+        private string highIntelligence = "High intellegence";
+        public new string Info()
         {
-            Console.WriteLine("Yes");
+            return base.Info() + ", " + highIntelligence;
         }
     }
 }

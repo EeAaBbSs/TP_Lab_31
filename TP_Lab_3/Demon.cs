@@ -4,18 +4,13 @@ using System.Text;
 
 namespace TP_Lab_3
 {
-    class Demon : Monster
+    public class Demon : Monster
     {
-        protected bool wings = true;
-        protected bool horns = true;
-        
-        public void CanFly()
+        private string wings = "Wings";
+        private string horns = "Horns";  
+        public new string Info()
         {
-            Console.WriteLine("Yes");
-        }
-        public void HaveHorns()
-        {
-            Console.WriteLine("Yes");
+            return base.Info() + $", has a following characteristics: {wings}, {horns}"; 
         }
     }
 }

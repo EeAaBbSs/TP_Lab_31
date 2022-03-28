@@ -4,12 +4,12 @@ using System.Text;
 
 namespace TP_Lab_3
 {
-    class Monster
+    public class Monster
     {
-        protected string type = "Enemy"; 
-        public virtual void Info()
+        private string type = "Enemy"; 
+        public string Info()
         {
-            Console.WriteLine($"Type: {type}");
+            return $"Type: {type}";
         }
     }
 }

@@ -6,26 +6,30 @@ namespace TP_Lab_3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Здание 1\nClass Monster");
+            string info1, info2, info3, info4, info5;
+            Console.WriteLine("Здание 1\n----------------\nClass Monster");
             Monster monster = new Monster();
-            monster.Info();
+            info1 = monster.Info();
+            Console.WriteLine(info1);
 
             Console.WriteLine("\nClass Demon : Monster");
             Demon demon = new Demon();
-            demon.Info();
-            demon.CanFly(); 
-            demon.HaveHorns();
+            info2 = demon.Info();
+            Console.WriteLine(info2);
 
             Console.WriteLine("\nClass Archon : Demon");
             Archon archon = new Archon();
-            archon.Info(); 
-            archon.CanFly();
-            archon.HaveHorns();
-            archon.IsSmart();
+            info3 = archon.Info();
+            Console.WriteLine(info3);
 
-            Console.WriteLine("\nЗадание 2");
+            Console.WriteLine("\nЗадание 2\n----------------\nClass Notebook");
+            Notebook notebook = new Notebook();
+            info4 = notebook.Info();
+            Console.WriteLine(info4);
+
             CoveredNotebook covNote = new CoveredNotebook();
-            covNote.OpenBook();
+            info5 = covNote.Info();
+            Console.WriteLine(info5);
         }
     }
 }

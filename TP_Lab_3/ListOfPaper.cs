@@ -4,9 +4,9 @@ using System.Text;
 
 namespace TP_Lab_3
 {
-    class ListOfPaper
+    public class ListOfPaper
     { 
-        public string Text { get; private set; }
+        public string Text { get; }
         public ListOfPaper(string text)
         {
             Text = text;
