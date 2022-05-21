@@ -12,19 +12,51 @@ namespace TP_Lab_3.Tests
         [TestMethod()]
         public void TestNotebook()
         {
-            Notebook notebook = new Notebook();
-            string expected = "Number of pages 5\nText of the first page.\nText of the second page.\nText of the third page.\nText of the fourth page.\nText of the fifth page.\n";
+            int noP = 2;
+            Notebook notebook = new Notebook(noP);
+            string expected = "Number of pages: 2\nText of the 1 page\nText of the 2 page\n";
             string actual = notebook.Info();
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
         public void TestCoverNotebook()
         {
-            CoveredNotebook notebook = new CoveredNotebook();
-            string expected = "Type of cover: Hard\nNumber of pages 5\nText of the first page.\nText of the second page.\nText of the third page.\nText of the fourth page.\nText of the fifth page.\n";
+            int noP = 3; string covMaterial = "carton";
+            CoveredNotebook notebook = new CoveredNotebook(noP, covMaterial);
+            string expected = "Cover material: carton\nNumber of pages: 3\nText of the 1 page\nText of the 2 page\nText of the 3 page\n";
             string actual = notebook.Info();
             Assert.AreEqual(expected, actual);
             //Проверка коммита на гитхаб
+        }
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void NotebookExceptionTest1()
+        {
+            Notebook notebook = new Notebook(0);
+        }
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void NotebookExceptionTest2()
+        {
+            Notebook notebook = new Notebook(-1);
+        }
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CoveredNotebookExceptionTest1()
+        {
+            CoveredNotebook notebook = new CoveredNotebook(2, "");
+        }
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CoveredNotebookExceptionTest2()
+        {
+            CoveredNotebook notebook = new CoveredNotebook(2, null);
+        }
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CoveredNotebookExceptionTest3()
+        {
+            CoveredNotebook notebook = new CoveredNotebook(2, "\n    \t \r ");
         }
     }
 }

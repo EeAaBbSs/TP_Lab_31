@@ -7,18 +7,15 @@ namespace TP_Lab_3
     public class Notebook
     {
         private List<ListOfPaper> notebookList = new List<ListOfPaper>();
-        private ListOfPaper list1 = new ListOfPaper("Text of the first page.");
-        private ListOfPaper list2 = new ListOfPaper("Text of the second page.");
-        private ListOfPaper list3 = new ListOfPaper("Text of the third page.");
-        private ListOfPaper list4 = new ListOfPaper("Text of the fourth page.");
-        private ListOfPaper list5 = new ListOfPaper("Text of the fifth page.");
-        public Notebook()
+        public Notebook(int noP)
         {
-            notebookList.Add(list1);
-            notebookList.Add(list2);
-            notebookList.Add(list3);
-            notebookList.Add(list4);
-            notebookList.Add(list5);
+            if (noP <= 0) 
+                { throw new ArgumentException("Number of page cant be below than zero or equal"); }
+            for (int i = 0; i < noP; i++)
+            {
+                ListOfPaper p = new ListOfPaper("Text of the " + Convert.ToString(i+1) + " page");
+                notebookList.Add(p);
+            }
         }
         public string Info()
         {
@@ -27,7 +24,7 @@ namespace TP_Lab_3
             {
                 str += string.Concat(notebookList[i].Text, "\n");
             }
-            return "Number of pages " + notebookList.Count + "\n" + str;
+            return "Number of pages: " + notebookList.Count + "\n" + str;
         }
     }
 }
